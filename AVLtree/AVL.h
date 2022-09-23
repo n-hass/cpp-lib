@@ -16,7 +16,6 @@ class AVL {
     void del(T);
     void print(); // default for print, calls print(in)
     void print(int);
-    // int count();
     bool empty();
 
     AVL();

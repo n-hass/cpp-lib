@@ -88,10 +88,6 @@ Node<T>* AVL<T>::rot_R(Node<T>* node) {
 
 template <typename T>
 Node<T>* AVL<T>::rot_LR(Node<T>* node) {
-  // Node<T>* newn = node->l;
-  // node->l = rot_R(newn);
-
-  // return rot_L(node);
   Node<T>* tA = node->l;
   Node<T>* tB = tA->r;
 
@@ -105,10 +101,6 @@ Node<T>* AVL<T>::rot_LR(Node<T>* node) {
 
 template <typename T>
 Node<T>* AVL<T>::rot_RL(Node<T>* node) {
-  // Node<T>* newn = node->r;
-  // node->r = rot_L(newn);
-  
-  // return rot_R(node);
   Node<T>* tA = node->r;
   Node<T>* tB = tA->l;
 
@@ -301,15 +293,9 @@ template <typename T>
 void AVL<T>::deleteNodes(Node<T> * n) {
 
   if (n!=nullptr) {
-    // if (n->l != nullptr) {
-      deleteNodes(n->l);
-      // delete n->l;
-    // }
 
-    // if (n->r != nullptr) {
-      deleteNodes(n->r);
-      // delete n->r;
-    // }
+    deleteNodes(n->l);
+    deleteNodes(n->r);
 
     delete n;
   }
