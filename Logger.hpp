@@ -10,8 +10,8 @@
 #include <ctime>
 #include <vector>
 
-#if defined(__has_cpp_attribute) 
-    #if __has_cpp_attribute(__cpp_lib_filesystem)
+#if defined(__has_include)
+    #if  __has_include(<filesystem>) && defined(__cpp_lib_filesystem)
         #include <filesystem>
         #define fs std::filesystem
     #else
